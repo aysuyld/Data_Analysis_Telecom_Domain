@@ -1,0 +1,92 @@
+This file contains all the meta information regarding the columns described in the CSV files. we have provided 6 CSV files:
+1. dim_cities
+2. dim_date
+3. dim_plan
+4. fact_atliqo_metrics
+5. fact_market_share
+6. fact_plan_revenue
+
+
+
+Column Description for dim_cities:
+1. city_code: This column represents the unique code given for each city.
+2. city_name: This column represents the name of the city corresponding to the city code.
+
+
+
+Column Description for dim_date:
+1. date: This column represents the starting date of each month. 		--> Bu sütun her ayın başlangıç tarihini temsil eder.
+2. month_name: This column represents the month names in abbreviated form(Example: Jan, Feb, Mar, etc). We have months starting from January to September except for May. -->Bu sütun, kısaltılmış biçimde ay isimlerini temsil eder (Örnek: Oca, Şub, Mar, vb.). Mayıs hariç, Ocak'tan Eylül'e kadar aylar bulunmaktadır.
+3. before/after_5g: This column represents the unique category based on the month. We have 2 categories, Before 5G and After 5G. January to April comes represents the period before 5G implementation and June to September represents periods after 5G implementation. --> Bu sütun, ay bazında benzersiz kategorileri temsil eder. 2 kategoriye sahibiz, 5G Öncesi ve 5G Sonrası. Ocak'tan Nisan'a kadar olan dönem 5G uygulamasından önceyi temsil ederken, Haziran'dan Eylül'e kadar olan dönem 5G uygulamasından sonrasını temsil eder.
+4. time_period: This column represents the unique sequence number ranging from 1 to 4. These time Periods are used to make respective months comparisons before and after 5G implementation (Example: Jan vs Jun, Feb vs Jul, Mar vs Aug and Apr vs Sep) --> Bu sütun, 1 ila 4 arasında değişen benzersiz sıra numaralarını temsil eder. Bu zaman dilimleri, 5G uygulamasından önce ve sonra ilgili ayların karşılaştırmalarını yapmak için kullanılır (Örnek: Ocak vs Haziran, Şubat vs Temmuz, Mart vs Ağustos ve Nisan vs Eylül).
+
+
+
+
+Column Description for dim_plan:
+1. plan: This column represents the various internet plans provided by the Atliqo company to the users. 	--> Bu sütun, Atliqo şirketinin kullanıcılara sunduğu çeşitli internet planlarını temsil eder.
+2. plan_description: This column represents the brief description about the internet plan.	--> Bu sütun, internet planı hakkında kısa açıklamayı temsil eder.
+
+
+
+Column Description for fact_atliqo_metrics:
+1. date: This column represents the starting date of each month.	--> Bu sütun, her ayın başlangıç tarihini temsil eder.
+2. city_code: This column represents the unique pincode code given for each city.	--> Bu sütun, her şehir için verilen benzersiz posta kodunu temsil eder.
+3. company: This column represents the company name for which the data is provided. In this dataset it's only Atliqo.	--> Bu sütun, verilerin sağlandığı şirketin adını temsil eder. Bu veri setinde yalnızca Atliqo bulunmaktadır.
+4. atliqo_revenue_crores: This column represents the revenue that Atliqo got on that particular month in that city_code in crores(unit of currency in India - 1Crore = 10 Million) from the internet users.	--> Bu sütun, Atliqo'nun o aydaki belirli bir şehir kodundan internet kullanıcılarından elde ettiği geliri temsil eder. Birim, Hindistan'da kullanılan para birimi olan krore'dir (1 krore = 10 milyon).
+5. arpu: This column represents the average revenue per user. That means on average how much revenue Atliqo generated on single user for a given time period. --> Bu sütun, Atliqo'nun belirli bir zaman diliminde ortalama olarak her bir kullanıcıdan elde ettiği geliri temsil eder. Yani, Atliqo'nun belirli bir zaman diliminde tek bir kullanıcıdan ortalama olarak ne kadar gelir elde ettiğini gösterir.
+6. active_users_lakhs: This column represents the number of active users who are using Atliqo's service on that particular month in that city_code in lakhs(unit of currency in India - 1 Lakh = 100,000).	--> Bu sütun, o ay içinde belirli bir şehir kodunda Atliqo'nun hizmetini kullanan aktif kullanıcı sayısını temsil eder.
+7. unsubscribed_users_lakhs: This column represents the number of unsubscribed users who unsubscribed from Atliqo on that particular month in that city_code in lakhs(unit of currency in India - 1 Lakh = 100,000). 	--> Bu sütun, o ay içinde belirli bir şehir kodunda Atliqo'dan aboneliklerini iptal eden kullanıcıların sayısını temsil eder.
+
+
+
+
+Column Description for fact_market_share:
+1. date: This column represents the starting date of each month.	--> Bu sütun, her ayın başlangıç ​​tarihini temsil eder.
+2. city_code: This column represents the unique code given for each city.	--> Bu sütun, her şehir için verilen benzersiz kodu temsil eder.
+3. tmv_city_crores: This column represents the total market value of the city in that month in crores(unit of currency in India) from the internet users. --> Bu sütun, o ay içinde şehrin toplam pazar değerini temsil eder, milyonlarca birim (Hindistan para birimi birimi olarak) internet kullanıcılarından.
+4. company: This column represents the different competitor names in the telecom industry [Atliqo, Britel, DADAFONE, PIO, Others]. --> Bu sütun, telekom endüstrisindeki farklı rakip isimleri [Atliqo, Britel, DADAFONE, PIO, Diğerleri]ni temsil eder.
+5. ms_pct: This column represents the percentage of market share gained by respective company from the total market value(tmv_city) on that particular month in that city-code. 	--> Bu sütun, ilgili şirketin o ay ilgili şehir kodundaki toplam pazar değerinden (tmv_city) elde ettiği pazar payı yüzdesini temsil eder.
+
+
+
+
+Column Description for fact_plan_revenue:
+1. date: This column represents the starting date of each month.
+2. city_code: This column represents the unique code given for each city.
+3. plans: This column represents the various internet plans provided by the Atliqo company to the users.
+4. plan_revenue_crores: This column represents the revenue that Atliqo got from that respective plan on that particular month in that city_code in crores (unit of currency in India - 1Crore = 10 Million).	--> Bu sütun, Atliqo'nun o ayın ilgili planından ilgili şehir kodunda elde ettiği geliri crore cinsinden temsil eder (Hindistan'da bir para birimi birimi - 1 Crore = 10 Milyon).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
